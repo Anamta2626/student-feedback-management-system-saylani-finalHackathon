@@ -27,5 +27,9 @@ app.use('/api/feedback', feedbackRoutes);
 app.use('/api/feedbacks', feedbackRoutes); // for GET and DELETE
 app.use('/api/admin', adminRoutes);
 
+app.get('/', (req,res) =>{
+    res.send('server is working')
+})
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
