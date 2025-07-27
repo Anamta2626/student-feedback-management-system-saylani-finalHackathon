@@ -20,7 +20,7 @@ function FeedbackForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/feedback', formData);
+      await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/feedback`, formData);
       navigate('/thankyou');
     } catch (err) {
       alert('Error submitting feedback');
