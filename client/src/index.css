@@ -1,0 +1,17 @@
+@import "tailwindcss";
+/* @import "tailwindcss/components";
+@import "tailwindcss/utilities"; */
+
+
+/* Custom scrollbars and focus outline removal */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #60a5fa;
+  border-radius: 10px;
+}
+
+*:focus {
+  outline: none;
+}
