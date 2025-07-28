@@ -11,6 +11,7 @@ import bcrypt from 'bcryptjs';
 dotenv.config();
 connectDB();
 const mongoURI = process.env.MONGO_URI;
+app.use(express.urlencoded({ extended: true }));
 
 mongoose.connect("mongodb+srv://anamtasajidali:uupB8SpBNYtaUAvr@cluster1.nmxmzdi.mongodb.net/?retryWrites=true&w=majority&appName=Cluster1")
 // , {
@@ -27,9 +28,9 @@ mongoose.connect("mongodb+srv://anamtasajidali:uupB8SpBNYtaUAvr@cluster1.nmxmzdi
 
 const app = express();
 
-app.use(cors({
-    origin: process.env.FRONT_END_URL,
-}));
+// app.use(cors({
+//     origin: process.env.FRONT_END_URL,
+// }));
 app.use(express.json());
 
 const createDefaultAdmin = async () => {
