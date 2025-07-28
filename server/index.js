@@ -8,10 +8,12 @@ import feedbackRoutes from './routes/feedbackRoutes.js';
 import adminRoutes from './routes/adminRoutes.js';
 import bcrypt from 'bcryptjs';
 
+const app = express();
+
 dotenv.config();
 connectDB();
 const mongoURI = process.env.MONGO_URI;
-app.use(express.urlencoded({ extended: true }));
+// app.use(express.urlencoded({ extended: true }));
 
 mongoose.connect("mongodb+srv://anamtasajidali:uupB8SpBNYtaUAvr@cluster1.nmxmzdi.mongodb.net/?retryWrites=true&w=majority&appName=Cluster1")
 // , {
@@ -26,11 +28,12 @@ mongoose.connect("mongodb+srv://anamtasajidali:uupB8SpBNYtaUAvr@cluster1.nmxmzdi
   })
 
 
-const app = express();
 
-// app.use(cors({
-//     origin: process.env.FRONT_END_URL,
-// }));
+app.use(cors({
+    origin: process.env.FRONT_END_URL,
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+}));
 app.use(express.json());
 
 const createDefaultAdmin = async () => {
