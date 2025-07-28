@@ -27,9 +27,9 @@ mongoose.connect("mongodb+srv://anamtasajidali:uupB8SpBNYtaUAvr@cluster1.nmxmzdi
 
 const app = express();
 
-app.use(cors({
-    origin: process.env.FRONT_END_URL,
-}));
+// app.use(cors({
+//     origin: process.env.FRONT_END_URL,
+// }));
 app.use(express.json());
 
 const createDefaultAdmin = async () => {
